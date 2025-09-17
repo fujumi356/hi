@@ -1,0 +1,339 @@
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    min-height: 100vh;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* セクション */
+.section {
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+.section.hidden {
+    display: none;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* イントロ画像 */
+.intro-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 30px 0;
+}
+
+.intro-image-item {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    margin: 20px 0;
+}
+
+.intro-image-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro-image-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+
+/* オーバーレイボタン（基本スタイル） */
+.overlay-btn {
+    position: absolute;
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    font-weight: 600 !important;
+    z-index: 10;
+    cursor: default !important;
+    pointer-events: auto;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* 説明２のボタン（中央配置） */
+#overlay1 {
+    top: 37%;
+    right: -10%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    padding: 40px 60px;
+}
+
+/* 7のボタン（右上配置） */
+#overlay2 {
+    top: 45%;
+    right: 68.5%;
+    transform: translate(0, 0);
+    font-size: 1rem;
+    padding: 22px 22px;
+}
+
+.overlay-btn:hover {
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+#overlay1:hover {
+    transform: translate(-50%, -50%) !important;
+}
+
+#overlay2:hover {
+    transform: translate(0, 0) !important;
+}
+
+
+/* ボタン */
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.4);
+    margin: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 85, 104, 0.6);
+}
+
+
+/* 画像コンテナ */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.image-item {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    margin: 20px 0;
+}
+
+
+.image-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+
+
+/* 回答エリア */
+#answerInput, #secondAnswerInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 20px;
+    border: 2px solid #404040;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+#answerInput:focus, #secondAnswerInput:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+
+/* 結果エリア */
+.result-content {
+    margin: 20px 0;
+}
+
+.result-content p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+#resultStatus {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#resultStatus.correct {
+    color: #48bb78;
+}
+
+#resultStatus.incorrect {
+    color: #f56565;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .intro-image-item img {
+        max-height: 70vh;
+    }
+    
+    .image-item img {
+        max-height: 70vh;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .image-item img {
+        max-height: 60vh;
+    }
+    
+    .intro-image-item img {
+        max-height: 60vh;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* メッセージ */
+.message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.message.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.message.error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.message.info {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+/* 不正解メッセージ */
+.incorrect-message {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background: #1a1a1a;
+    border: 2px solid #ef4444;
+    border-radius: 15px;
+    color: #ef4444;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+}

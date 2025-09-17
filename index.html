@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謎解きゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- イントロ -->
+            <section class="section intro">
+                <div class="intro-image-container">
+                    <div class="intro-image-item" data-image="日.jpg">
+                        <img src="日.jpg" alt="日">
+                    </div>
+                    <div class="intro-image-item" data-image="説明２.jpg">
+                        <img src="説明２.jpg" alt="説明２">
+                        <button id="overlay1" class="btn overlay-btn"></button>
+                    </div>
+                </div>
+                <button id="startBtn" class="btn">ゲームスタート</button>
+            </section>
+
+            <!-- 画像表示エリア -->
+            <section id="imageSection" class="section images hidden">
+                <div class="image-container">
+                    <div class="image-item" data-image="1.jpg">
+                        <img src="1.jpg" alt="1">
+                    </div>
+                    
+                    <div class="image-item" data-image="2.jpg">
+                        <img src="2.jpg" alt="2">
+                    </div>
+                    
+                    <div class="image-item" data-image="3.jpg">
+                        <img src="3.jpg" alt="3">
+                    </div>
+                    
+                    <div class="image-item" data-image="4.jpg">
+                        <img src="4.jpg" alt="4">
+                    </div>
+                    
+                    <div class="image-item" data-image="5.jpg">
+                        <img src="5.jpg" alt="5">
+                    </div>
+                    
+                    <div class="image-item" data-image="6.jpg">
+                        <img src="6.jpg" alt="6">
+                    </div>
+                    
+                    <div class="image-item" data-image="7.jpg">
+                        <img src="7.jpg" alt="7">
+                        <button id="overlay2" class="btn overlay-btn"></button>
+                    </div>
+                    
+                    <div class="image-item" data-image="8.jpg">
+                        <img src="8.jpg" alt="8">
+                    </div>
+                    
+                    <div class="image-item" data-image="9.jpg">
+                        <img src="9.jpg" alt="9">
+                    </div>
+                    
+                    <div class="image-item" data-image="盗塁王.jpg">
+                        <img src="盗塁王.jpg" alt="盗塁王">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 回答エリア -->
+            <section id="answerSection" class="section answer hidden">
+                <input type="text" id="answerInput" placeholder="答えを入力してください">
+                <button id="submitBtn" class="btn">回答</button>
+            </section>
+
+            <!-- 追加画像セクション -->
+            <section id="additionalImageSection" class="section images hidden">
+                <div class="image-container">
+                    <div class="image-item" data-image="情報.jpg">
+                        <img src="情報.jpg" alt="情報">
+                    </div>
+                    
+                    <div class="image-item" data-image="last.jpg">
+                        <img src="last.jpg" alt="last">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 追加回答エリア -->
+            <section id="secondAnswerSection" class="section answer hidden">
+                <input type="text" id="secondAnswerInput" placeholder="答えを入力してください">
+                <button id="submitSecondBtn" class="btn">回答</button>
+            </section>
+
+            <!-- 結果エリア -->
+            <section id="resultSection" class="section result hidden">
+                <h2>クリア</h2>
+                <div class="result-content">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
