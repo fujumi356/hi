@@ -95,7 +95,7 @@ body {
 /* オーバーレイボタン（基本スタイル） */
 .overlay-btn {
     position: absolute;
-    background: transparent !important;
+    background: black !important;
     border: none !important;
     color: transparent !important;
     font-weight: 600 !important;
@@ -106,26 +106,32 @@ body {
     text-shadow: none !important;
 }
 
-/* 説明２のボタン（中央配置） */
+/* 説明２のボタン（画像に対する相対位置） */
 #overlay1 {
-    top: 37%;
-    right: -10%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 80%;
+    transform: none;
     font-size: 1.2rem;
-    padding: 40px 60px;
+    padding: 20px 20px;
+    /* 画像のサイズに応じて調整 */
+    width: 20%;
+    height: 15%;
 }
 
-/* 7のボタン（右上配置） */
+/* 7のボタン（画像に対する相対位置） */
 #overlay2 {
-    top: 45%;
-    right: 68.5%;
-    transform: translate(0, 0);
+    top: 43%;
+    left: 22%;
+    transform: none;
     font-size: 1rem;
     padding: 22px 22px;
+    /* 画像のサイズに応じて調整 */
+    width: 10%;
+    height: 10%;
 }
 
 .overlay-btn:hover {
-    background: transparent !important;
+    background: black !important;
     border: none !important;
     color: transparent !important;
     box-shadow: none !important;
@@ -133,11 +139,11 @@ body {
 }
 
 #overlay1:hover {
-    transform: translate(-50%, -50%) !important;
+    transform: none !important;
 }
 
 #overlay2:hover {
-    transform: translate(0, 0) !important;
+    transform: none !important;
 }
 
 
@@ -266,6 +272,25 @@ body {
         width: 100%;
         max-width: 300px;
     }
+    
+    /* スマホでも同じ相対位置を維持 */
+    #overlay1 {
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: 12%;
+        padding: 30px 45px; /* スマホ用に少し小さく */
+    }
+    
+    #overlay2 {
+        top: 45%;
+        left: 31.5%;
+        transform: translate(0, 0);
+        width: 8%;
+        height: 8%;
+        padding: 18px 18px; /* スマホ用に少し小さく */
+    }
 }
 
 @media (max-width: 480px) {
@@ -279,6 +304,25 @@ body {
     
     .intro-image-item img {
         max-height: 60vh;
+    }
+    
+    /* 小さなスマホでも同じ相対位置を維持 */
+    #overlay1 {
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: 12%;
+        padding: 25px 35px; /* 小さなスマホ用により小さく */
+    }
+    
+    #overlay2 {
+        top: 45%;
+        left: 31.5%;
+        transform: translate(0, 0);
+        width: 8%;
+        height: 8%;
+        padding: 15px 15px; /* 小さなスマホ用により小さく */
     }
 }
 
