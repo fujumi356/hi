@@ -95,7 +95,7 @@ body {
 /* オーバーレイボタン（基本スタイル） */
 .overlay-btn {
     position: absolute;
-    background: black !important;
+    background: transparent !important;
     border: none !important;
     color: transparent !important;
     font-weight: 600 !important;
@@ -131,7 +131,7 @@ body {
 }
 
 .overlay-btn:hover {
-    background: black !important;
+    background: transparent !important;
     border: none !important;
     color: transparent !important;
     box-shadow: none !important;

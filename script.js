@@ -3,8 +3,8 @@ class SimpleScrollGame {
     constructor() {
         this.currentImageIndex = 0;
         this.totalImages = 14; // 日、説明２、1-9、盗塁王、情報、last
-        this.correctAnswer = "とうるいおう|トウルイオウ|盗塁王"; // 答え
-        this.secondCorrectAnswer = "クリア|くりあ|CLEAR|clear|クリアー"; // 最終問題の答え
+        this.correctAnswer = "なゆた|ナユタ|那由多|せいとうはなゆた|正答は那由多";  // 答え
+        this.secondCorrectAnswer = "さんごくじだい|三国時代|CLEAR|clear|クリアー"; // 最終問題の答え
         this.gameStarted = false;
         this.firstAnswerCorrect = false;
         this.overlay1TapCount = 0; // overlay1のタップ回数
@@ -64,8 +64,8 @@ class SimpleScrollGame {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     
-                    // 最後の画像（last.jpg）が表示されたら最終回答エリアを表示
-                    if (entry.target.dataset.image === 'last.jpg') {
+                    // 最後の画像（さんごくじだい.jpg）が表示されたら最終回答エリアを表示
+                    if (entry.target.dataset.image === 'さんごくじだい.jpg') {
                         setTimeout(() => {
                             this.showSecondAnswerSection();
                         }, 1000);
